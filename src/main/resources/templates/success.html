@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="/_head"></th:block>
+<body class="success">
+<th:block th:include="/_menu"></th:block>
+<h2>You have successfully registered!</h2>
+<div th:if="${newUser != null}">
+  <ul>
+    <li>User Name: <span th:utext="${newUser.username}">..</span></li>
+    <li>Email: <span th:utext="${newUser.email}">..</span></li>
+  </ul>
+</div>
+</body>
+</html>

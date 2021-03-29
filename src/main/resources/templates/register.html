@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="/_head"></th:block>
+<body class="register">
+<th:block th:include="/_menu"></th:block>
+<h2>Register</h2>
+<div th:if="${errorMessage != null}"
+     th:utext="${errorMessage}" class="error">...</div>
+<form th:action="@{/register}" th:object="${registrationForm}" method="POST">
+  <table>
+    <tr>
+      <td>User Name</td>
+      <td><input type="text" th:field="*{username}" /></td>
+      <td>
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" th:field="*{password}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Confirm password</td>
+      <td><input type="password" th:field="*{confirmPassword}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" th:field="*{email}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Confirm email</td>
+      <td><input type="text" th:field="*{confirmEmail}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('confirmEmail')}" th:errors="*{confirmEmail}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td><input type="text" th:field="*{firstName}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td><input type="text" th:field="*{lastName}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Patronymic</td>
+      <td><input type="text" th:field="*{patronymic}" /> </td>
+      <td>
+        <span th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">..</span>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <input type="submit" value="Submit" />
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

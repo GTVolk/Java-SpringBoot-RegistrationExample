@@ -1,0 +1,30 @@
+.menu {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.users table th, table td {
+    padding: 5px;
+}
+
+.message {
+    color: blue;
+}
+
+.register th, td {
+    padding: 5px;
+}
+.register td span  {
+    font-size:90%;
+    font-style: italic;
+    color: red;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+.success span {color: blue;}
+

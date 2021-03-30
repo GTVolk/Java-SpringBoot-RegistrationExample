@@ -5,6 +5,9 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Класс реализующий содержание email сообщения (тело + прикрепления)
+ */
 @Data
 @AllArgsConstructor
 public class EmailContent {

@@ -4,6 +4,9 @@ import java.util.List;
 import ru.devvault.skilltest.dto.RegistrationForm;
 import ru.devvault.skilltest.entity.User;
 
+/**
+ * Интерфейс сервиса для работы с пользователями
+ */
 public interface UserService {
     List<User> findAll();
     User findByEmail(String email);

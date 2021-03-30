@@ -2,6 +2,9 @@ package ru.devvault.skilltest.enumeration;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * Перечисление реализующее результат проверки внешней системой профиля пользователя
+ */
 @AllArgsConstructor
 public enum ProfileCheckStatus {
 

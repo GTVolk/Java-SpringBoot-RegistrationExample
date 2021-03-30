@@ -20,6 +20,13 @@ import ru.devvault.skilltest.service.MessagingService;
 import ru.devvault.skilltest.service.UserService;
 import ru.devvault.skilltest.validator.UserValidator;
 
+/**
+ * Контроллер роутов регистрации пользователей
+ *
+ * Биндит к объекту RegistrationForm валидатор при обращении через эту страницу
+ * Возвращает страницу регистрации и страницу успешной регистрации (если таковая была и был на нее редирект)
+ * При получении запроса на регистрацию проверяет не было ли ошибок, тогда сохраняет данные в БД и вызывает сервис отправки заявки одобрения во внешнюю систему
+ */
 @Slf4j
 @Controller
 public final class RegistrationController {
@@ -51,9 +58,7 @@ public final class RegistrationController {
 
     @GetMapping("/register")
     public String register(Model model) {
-        RegistrationForm registrationForm = new RegistrationForm();
-
-        model.addAttribute("registrationForm", registrationForm);
+        model.addAttribute("registrationForm", new RegistrationForm());
 
         return "register";
     }

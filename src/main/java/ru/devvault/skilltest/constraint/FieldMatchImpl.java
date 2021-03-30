@@ -6,6 +6,11 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.BeanUtils;
 
+/**
+ * Реализация аннотации сравнения полей для валидатора
+ *
+ * Для описания см. интерфейс
+ */
 @Slf4j
 public class FieldMatchImpl implements ConstraintValidator<FieldMatch, Object> {
     private String firstFieldName;

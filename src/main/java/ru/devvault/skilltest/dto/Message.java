@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Абстрактный класс реализующий общее сообщение
+ * @param <T> - тип тела сообщения
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

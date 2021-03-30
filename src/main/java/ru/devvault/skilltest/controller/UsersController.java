@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import ru.devvault.skilltest.entity.User;
 import ru.devvault.skilltest.service.UserService;
 
+/**
+ * Контроллер управления списком зарегистрированных пользователей
+ *
+ * Управляет вью отображения списка зарегистрированных пользователей
+ */
 @Controller
 public class UsersController {
     private final UserService userService;

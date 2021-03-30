@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import ru.devvault.skilltest.entity.User;
 import ru.devvault.skilltest.enumeration.ProfileCheckStatus;
 
+/**
+ * Класс реализующий оидаемый ответ внешней системы на заявку одобрения
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

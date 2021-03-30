@@ -11,6 +11,11 @@ import ru.devvault.skilltest.dto.RegistrationForm;
 import ru.devvault.skilltest.entity.User;
 import ru.devvault.skilltest.service.UserService;
 
+/**
+ * Класс реализующий валидатор регистрационной формы
+ *
+ * Есть проверки на уникальность юзернейма и email
+ */
 @Component
 public class UserValidator implements Validator {
 
@@ -36,8 +41,14 @@ public class UserValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "NotEmpty.registrationForm.lastName");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty.registrationForm.email");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmEmail", "NotEmpty.registrationForm.confirmEmail");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.registrationForm.password");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword", "NotEmpty.registrationForm.confirmPassword");
+
+        if (registrationForm.getPassword() == null || registrationForm.getPassword().length == 0) {
+            errors.rejectValue("password", "NotEmpty.registrationForm.password");
+        }
+
+        if (registrationForm.getConfirmPassword() == null || registrationForm.getConfirmPassword().length == 0) {
+            errors.rejectValue("confirmPassword", "NotEmpty.registrationForm.confirmPassword");
+        }
 
         if (!this.emailValidator.isValid(registrationForm.getEmail())) {
             // Invalid email.

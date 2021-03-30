@@ -9,12 +9,17 @@ import org.springframework.stereotype.Service;
 import ru.devvault.skilltest.dto.EmailAddress;
 import ru.devvault.skilltest.dto.EmailContent;
 
+/**
+ * Шаблонная реализация интерфейса отправки email
+ *
+ * В некоторых случаях может как-будто упасть по таймауту
+ */
 @Slf4j
 @Service
 public class MailerServiceImpl implements MailerService {
     @Override
     public void sendMail(EmailAddress toAddress, EmailContent messageBody) throws TimeoutException {
-        if(shouldThrowTimeout()) {
+        if (shouldThrowTimeout()) {
             sleep();
 
             throw new TimeoutException("Timeout!");
@@ -29,15 +34,15 @@ public class MailerServiceImpl implements MailerService {
     }
 
     @SneakyThrows
-    private static void sleep() {
+    private void sleep() {
         Thread.sleep(TimeUnit.MINUTES.toMillis(1));
     }
 
-    private static boolean shouldSleep() {
+    private boolean shouldSleep() {
         return new Random().nextInt(10) == 1;
     }
 
-    private static boolean shouldThrowTimeout() {
+    private boolean shouldThrowTimeout() {
         return new Random().nextInt(10) == 1;
     }
 }

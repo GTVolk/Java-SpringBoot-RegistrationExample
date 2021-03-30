@@ -13,6 +13,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Класс отображающий сущность пользователя из таблицы БД
+ */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +25,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    private Long id;    // Record id
 
     @Column(name = "username", nullable = false, unique = true)
     @NotEmpty(message = "Please provide your user name")
@@ -41,7 +44,7 @@ public class User {
 
     @Column(name = "password", nullable = false)
     @NotEmpty(message = "Please provide password")
-    private String encryptedPassword;
+    private String encryptedPassword;   // Encrypted using bcrypt password
 
     @Email(message = "Please provide a valid e-mail")
     @NotEmpty(message = "Please provide an e-mail")
@@ -49,7 +52,7 @@ public class User {
     private String email;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive;
+    private Boolean isActive;   // User profile is activated and accepted from external check system
 
     @Override
     public String toString() {

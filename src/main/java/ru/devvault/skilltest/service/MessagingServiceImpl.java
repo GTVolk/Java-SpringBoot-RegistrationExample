@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 import ru.devvault.skilltest.dto.Message;
 import ru.devvault.skilltest.dto.MessageId;
 
+/**
+ * Шаблонный класс реализующий сервис отправки сообщений по шине
+ *
+ * В некоторых случаях может как-будто упасть по таймауту
+ */
 @Service
 public class MessagingServiceImpl implements MessagingService {
 
@@ -41,16 +46,16 @@ public class MessagingServiceImpl implements MessagingService {
     }
 
     @SneakyThrows
-    private static void sleep() {
+    private void sleep() {
         Thread.sleep(TimeUnit.MINUTES.toMillis(1));
     }
 
 
-    private static boolean shouldSleep() {
+    private boolean shouldSleep() {
         return new Random().nextInt(10) == 1;
     }
 
-    private static boolean shouldThrowTimeout() {
+    private boolean shouldThrowTimeout() {
         return new Random().nextInt(10) == 1;
     }
 }

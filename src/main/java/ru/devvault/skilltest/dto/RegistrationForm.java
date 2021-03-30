@@ -8,6 +8,11 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.devvault.skilltest.constraint.FieldMatch;
 
+/**
+ * Класс реализующий форму регистрации
+ *
+ * Необходима для вью регистрации и валидации
+ */
 @Component
 @FieldMatch.List({
     @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),

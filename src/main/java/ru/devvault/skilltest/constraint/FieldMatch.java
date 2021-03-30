@@ -8,6 +8,11 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+/**
+ * Аннотация для поддержки одинаковых значений полей, используется для валидатора
+ *
+ * При указании над бином можно указать список полей которые будут сравниваться на равенство, и если не равны будет выдано сообщение как ошибка
+ */
 @Target({
     ElementType.TYPE,
     ElementType.ANNOTATION_TYPE

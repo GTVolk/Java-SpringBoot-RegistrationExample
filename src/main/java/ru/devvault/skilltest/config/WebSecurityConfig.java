@@ -10,6 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Конфигурация Spring Security
+ *
+ * Здесь настраиваем бин конвертации паролей
+ * И отключаем любые проверки доступа на веб-сервере, а так же отключаем csrf токен и окно авторизации
+ */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

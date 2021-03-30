@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Класс реализующий ИД сообщенияы
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

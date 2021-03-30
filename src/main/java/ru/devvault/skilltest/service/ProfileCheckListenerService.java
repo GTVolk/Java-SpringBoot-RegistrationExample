@@ -13,6 +13,12 @@ import ru.devvault.skilltest.dto.Message;
 import ru.devvault.skilltest.entity.User;
 import ru.devvault.skilltest.enumeration.ProfileCheckStatus;
 
+/**
+ * Класс реализующий слушателя (консьюмера) сообщений по шине по проверке профилей зарегистрированных пользователей
+ *
+ * В некоторых случаях может как-будто упасть по таймауту
+ * При успешном получении сообщения и если заявка одобрена, то устанавливает у пользователя флаг активности и отсылает ему приветственное письмо
+ */
 @Component
 @Slf4j
 public class ProfileCheckListenerService implements MessageListener<CheckProfileResponse> {
@@ -53,15 +59,15 @@ public class ProfileCheckListenerService implements MessageListener<CheckProfile
     }
 
     @SneakyThrows
-    private static void sleep() {
+    private void sleep() {
         Thread.sleep(TimeUnit.MINUTES.toMillis(1));
     }
 
-    private static boolean shouldSleep() {
+    private boolean shouldSleep() {
         return new Random().nextInt(10) == 1;
     }
 
-    private static boolean shouldThrowException() {
+    private boolean shouldThrowException() {
         return new Random().nextInt(10) == 1;
     }
 }

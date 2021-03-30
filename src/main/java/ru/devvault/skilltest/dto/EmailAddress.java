@@ -1,13 +1,16 @@
 package ru.devvault.skilltest.dto;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс для представления адресов отправки email сообщения
+ */
 public class EmailAddress {
     private List<String> addresses;
 
     public EmailAddress() {
-        this.addresses = Collections.emptyList();
+        this.addresses = new ArrayList<>();
     }
 
     public EmailAddress(List<String> addresses) {

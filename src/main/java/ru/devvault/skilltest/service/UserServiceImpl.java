@@ -9,6 +9,9 @@ import ru.devvault.skilltest.dto.RegistrationForm;
 import ru.devvault.skilltest.entity.User;
 import ru.devvault.skilltest.repository.UserRepository;
 
+/**
+ * Реализация интерфейса для работы с пользователями
+ */
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;

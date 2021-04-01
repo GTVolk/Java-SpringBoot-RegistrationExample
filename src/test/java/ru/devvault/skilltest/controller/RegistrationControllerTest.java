@@ -85,7 +85,7 @@ class RegistrationControllerTest {
             "john@doe.com"
         );
 
-        doReturn(mockUser).when(userService).save(any());
+        doReturn(mockUser).when(userService).createNewUser(any());
         doReturn(new MessageId()).when(messagingService).send(any());
         doReturn(true).when(userValidator).supports(RegistrationForm.class);
 

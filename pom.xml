@@ -6,13 +6,13 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.4.4</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath/>
   </parent>
   <groupId>ru.devvault</groupId>
-  <artifactId>skill-test</artifactId>
+  <artifactId>sb-regform</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>skill-test</name>
-  <description>Skill Test Project</description>
+  <name>spring-boot-registration-form</name>
+  <description>Spring Boot Registration Form Test Project</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

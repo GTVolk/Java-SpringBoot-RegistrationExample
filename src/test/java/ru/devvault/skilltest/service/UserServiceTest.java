@@ -58,7 +58,7 @@ class UserServiceTest {
         doReturn(users).when(userRepository).findAll();
 
         // Execute the service call
-        List<User> users = userService.findAll();
+        List<User> users = userService.getUsersList();
 
         // Assert the response
         Assertions.assertEquals(2, users.size(), "findAll should return 2 users");
@@ -110,7 +110,7 @@ class UserServiceTest {
         doReturn(mockUser).when(userRepository).save(any());
 
         // Execute the service call
-        User returnedUser = userService.save(registrationForm);
+        User returnedUser = userService.createNewUser(registrationForm);
 
         // Assert the response
         Assertions.assertNotNull(returnedUser, "The saved user should not be null");

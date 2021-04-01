@@ -32,7 +32,6 @@ import ru.devvault.skilltest.validator.UserValidator;
 public final class RegistrationController {
     private final UserService userService;
     private final UserValidator userValidator;
-    private final MessagingService messagingService;
 
     // Set a form validator
     @InitBinder
@@ -82,16 +81,7 @@ public final class RegistrationController {
 
         User newUser;
         try {
-            newUser = userService.save(registrationForm);
-            if (newUser == null) {
-                throw new RuntimeException("Empty user data");
-            }
-
-            MessageId messageId = messagingService.send(new CheckProfileRequestMessage(newUser));
-            if (messageId == null) {
-                throw new RuntimeException("Message not sent.");
-            }
-
+            newUser = userService.createNewUser(registrationForm);
             redirectAttributes.addFlashAttribute("newUser", newUser);
 
             return "redirect:/register/success";
@@ -100,7 +90,5 @@ public final class RegistrationController {
 
             return "register";
         }
-
-
     }
 }

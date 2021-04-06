@@ -1,4 +1,4 @@
-# Spring Boot Registration Form Skill-Test
+# Spring Boot Registration Form
 
 ## Постановка
 
